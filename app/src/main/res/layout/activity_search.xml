@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.it.hungvt.moviesapp.screen.search.SearchViewModel"
+            />
+        <variable
+            name="activity"
+            type="com.it.hungvt.moviesapp.screen.search.SearchActivity"/>
+
+        <import
+            type="com.it.hungvt.moviesapp.utils.LayoutManagerUtils"/>
+        <import type="com.it.hungvt.moviesapp.utils.Constant"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.it.hungvt.moviesapp.screen.search.SearchActivity"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                supportActionBarSearch="@{activity}"
+                >
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:closeIcon="@drawable/ic_cancel_search"
+                android:iconifiedByDefault="false"
+                android:onQueryTextSubmit="@{(v)->viewModel.onQueryTextSubmit(v)}"
+                android:queryHint="@string/action_search_hint"
+                android:searchIcon="@drawable/ic_search"
+                />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layoutManager="@{LayoutManagerUtils.gridLayout(Constant.GRID_COLUMN)}"
+            recyclerAdapter="@{viewModel.adapter}"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

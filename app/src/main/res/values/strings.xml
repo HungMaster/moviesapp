@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Movies App</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="title_nav_home">Home</string>
+    <string name="title_nav_genres">Genres</string>
+    <string name="title_nav_favorite">Favorite</string>
+    <string name="title_nav_settings">Settings</string>
+    <string name="title_nav_about_us">About Us</string>
+    <string name="title_nav_other">Other</string>
+    <string name="drawer_open_content">Open Drawer</string>
+    <string name="drawer_close_content">Close Drawer</string>
+    <string name="action_search">Search</string>
+    <string name="title_trailer">Trailer</string>
+    <string name="title_nav_header_name">Hung Master</string>
+    <string name="title_nav_header_email">tuanhungcn9ptit@gmai.com</string>
+    <string name="action_search_hint">Movie name…</string>
+    <string name="message_add_move_success">Add Movie Favorite Success</string>
+    <string name="message_add_move_failure">Movie Have Been Added Favorite</string>
+    <string name="message_load_move_failure">Load Movie From Local Failure</string>
+    <string name="message_delete_move_success">Delete Movie Success</string>
+    <string name="message_delete_move_failure">Movie Have Not Add To Favorite</string>
+    <string name="title_favorite_screen">Favorite Movie</string>
+    <string name="title_tab_top_rate">Top Rate</string>
+    <string name="title_tab_up_coming">Up Coming</string>
+    <string name="title_tab_now_playing">Now Playing</string>
+    <string name="title_tab_popular">Popular</string>
+    <string name="title_actors">Actors</string>
+    <string name="title_genre">Genre</string>
+    <string name="title_productor">Productor</string>
+</resources>

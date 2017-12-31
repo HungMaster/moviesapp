@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="genre"
+            type="com.it.hungvt.moviesapp.data.model.Genre"/>
+        <variable
+            name="listener"
+            type="com.it.hungvt.moviesapp.screen.detail.GenreAdapter.OnGenreItemClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->listener.onGenreItemClick(genre)}"
+        android:layout_margin="@dimen/padding_layout"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{genre.name}"
+            style="?android:attr/textAppearance"
+            />
+    </RelativeLayout>
+
+</layout>

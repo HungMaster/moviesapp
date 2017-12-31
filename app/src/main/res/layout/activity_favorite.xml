@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.it.hungvt.moviesapp.screen.favorite.FavoriteViewModel"
+            />
+        <variable
+            name="activity"
+            type="com.it.hungvt.moviesapp.screen.favorite.FavoriteActivity"
+            />
+        <import type="com.it.hungvt.moviesapp.utils.LayoutManagerUtils"/>
+        <import type="com.it.hungvt.moviesapp.utils.Constant"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.it.hungvt.moviesapp.screen.favorite.FavoriteActivity"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="@android:color/white"
+                supportActionBarFavorite="@{activity}"
+                >
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+            layoutManager="@{LayoutManagerUtils.gridLayout(Constant.GRID_COLUMN)}"
+            recyclerAdapter="@{viewModel.adapter}"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
